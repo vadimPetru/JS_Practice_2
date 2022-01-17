@@ -22,12 +22,18 @@
 
       let ages = prompt("Сколько Вам лет, если не секрет ?", 35 );
       if (isNaN(ages) == true || ages =="") {
-         document.write("Введите ваш возраст!");
-        } else {
+         alert("Ваш возраст не известен!");
+        } 
+     else if(typeof(ages) ==='string' && ages.match(/^ ([а - яё][А - ЯЁ] +| [a - z][A - Z] +)$/i))
+     {
+        alert("Введите цифры для возраста");
+     }
+        else {
           ages = Number(ages)+10;
+           alert("Через 10 лет Вам исполнится " + ages + " лет!");
         }
       
-      alert("Через 10 лет Вам исполнится " + ages + " лет!");
+     
       let RETURN = confirm("Начать заново?");
     
   </script>
